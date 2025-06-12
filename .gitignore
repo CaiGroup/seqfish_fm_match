@@ -1,0 +1,7 @@
+build*
+*.egg-info*
+.idea*
+*pycache*
+example_notebook/*.csv
+example_notebook/.ipynb_checkpoints
+*.npy
