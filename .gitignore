@@ -1,4 +1,5 @@
-build*
+build/bd*
+build/lib
 *.egg-info*
 .idea*
 *pycache*

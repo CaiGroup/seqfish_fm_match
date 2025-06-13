@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example &mdash; seqfish_fm_match 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            seqfish_fm_match
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#read-in-example-data">Read in example data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#look-at-the-data">Look at the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index-the-readout-dataframe-by-the-hyridization-in-which-the-dots-were-found">Index the readout dataframe by the hyridization in which the dots were found</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-fmmatcher-object">Create the FMMatcher Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-find-parameters">Auto find parameters.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#you-can-save-and-load-the-parameters">You can save and load the parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternatively-set-the-search-parameters-manually-only-one-set-of-reference-fiducial-markers-is-necessary-if-you-do-this">Alternatively, set the search parameters manually. Only one set of reference fiducial markers is necessary if you do this.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-alignment">Run the Alignment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#view-the-results">View the results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-error-estimates">View error estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plot-mean-square-leave-one-out-cross-validation-error-estimates">Plot Mean Square Leave-One-Out Cross Validation Error Estimates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-the-results">Save the results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#it-is-useful-to-save-leave-one-out-cross-validation-error-estimates-for-the-alignment-shifts-and-records-of-which-readout-dots-matched-to-which-reference-dots">It is useful to save leave-one-out cross validation error estimates for the alignment shifts and records of which readout dots matched to which reference dots.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">seqfish_fm_match</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Example</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/example.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example">
+<h1>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h1>
+<p>Note: this page was generated from a jupyter notebook and sample data both of which are freely available in the <a class="reference external" href="https://github.com/CaiGroup/seqfish_fm_match">seqfish_fm_match github repository</a>. A version of this notebook is also freely available on <a class="reference external" href="https://colab.research.google.com/github/CaiGroup/seqfish_fm_match/blob/main/example_notebook/example_alignment_colab_py.ipynb">Google Colab</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">seqfish_fm_match_</span><span class="w"> </span><span class="kn">import</span> <span class="n">FMMatcher</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+<section id="read-in-example-data">
+<h2>Read in example data<a class="headerlink" href="#read-in-example-data" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ref_init</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/initial_reference.csv&quot;</span><span class="p">)</span>
+<span class="n">ref_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/final_reference.csv&quot;</span><span class="p">)</span>
+<span class="n">ro</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/bright_ro_dots.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example data is from channel 561 of position 4 in replicate 2 of the original seqFISH+ NIH3T3 cell experiment. It was chosen for its small size. x and y distance units are in pixels. Intensity units are arbitrary.</p>
+</section>
+<section id="look-at-the-data">
+<h2>Look at the data<a class="headerlink" href="#look-at-the-data" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ref_init</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>int</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>31.999543</td>
+      <td>1080.999984</td>
+      <td>0</td>
+      <td>17773.627270</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0</td>
+      <td>6868.670956</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>86.710022</td>
+      <td>1613.105294</td>
+      <td>0</td>
+      <td>3367.605233</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>421.228328</td>
+      <td>864.232003</td>
+      <td>0</td>
+      <td>3608.949352</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>680.397582</td>
+      <td>491.218607</td>
+      <td>0</td>
+      <td>3503.164018</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ref_final</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>int</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>31.999262</td>
+      <td>1080.999826</td>
+      <td>0</td>
+      <td>17956.057860</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>115.548279</td>
+      <td>540.132421</td>
+      <td>0</td>
+      <td>4546.240240</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>730.826144</td>
+      <td>424.953615</td>
+      <td>0</td>
+      <td>3666.393698</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>792.032219</td>
+      <td>473.490937</td>
+      <td>0</td>
+      <td>4207.299912</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>823.372502</td>
+      <td>1016.670800</td>
+      <td>0</td>
+      <td>9650.076824</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ro</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hyb</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>int</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>31.999691</td>
+      <td>1081.000000</td>
+      <td>0</td>
+      <td>17634.928440</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>115.753690</td>
+      <td>544.112930</td>
+      <td>0</td>
+      <td>8089.031985</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>87.782786</td>
+      <td>1612.176181</td>
+      <td>0</td>
+      <td>3768.478697</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>272.071022</td>
+      <td>1516.792724</td>
+      <td>0</td>
+      <td>3625.500395</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>422.286671</td>
+      <td>863.441670</td>
+      <td>0</td>
+      <td>3874.274898</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</section>
+<section id="index-the-readout-dataframe-by-the-hyridization-in-which-the-dots-were-found">
+<h2>Index the readout dataframe by the hyridization in which the dots were found<a class="headerlink" href="#index-the-readout-dataframe-by-the-hyridization-in-which-the-dots-were-found" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ro</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;hyb&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ro</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>int</th>
+    </tr>
+    <tr>
+      <th>hyb</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>31.999691</td>
+      <td>1081.000000</td>
+      <td>0</td>
+      <td>17634.928440</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>115.753690</td>
+      <td>544.112930</td>
+      <td>0</td>
+      <td>8089.031985</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>87.782786</td>
+      <td>1612.176181</td>
+      <td>0</td>
+      <td>3768.478697</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>272.071022</td>
+      <td>1516.792724</td>
+      <td>0</td>
+      <td>3625.500395</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>422.286671</td>
+      <td>863.441670</td>
+      <td>0</td>
+      <td>3874.274898</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</section>
+<section id="create-the-fmmatcher-object">
+<h2>Create the FMMatcher Object<a class="headerlink" href="#create-the-fmmatcher-object" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span> <span class="o">=</span> <span class="n">FMMatcher</span><span class="p">(</span><span class="n">ro</span><span class="p">,</span> <span class="n">ref_init</span><span class="p">,</span> <span class="n">ref_final</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="auto-find-parameters">
+<h2>Auto find parameters.<a class="headerlink" href="#auto-find-parameters" title="Link to this heading"></a></h2>
+<p>This does a grid search for parameters that work well in matching the initial and final reference fiducial marker patterns, so it might take a few minutes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">auto_set_params</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="you-can-save-and-load-the-parameters">
+<h2>You can save and load the parameters<a class="headerlink" href="#you-can-save-and-load-the-parameters" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">save_params</span><span class="p">(</span><span class="s2">&quot;saved_parameters.csv&quot;</span><span class="p">)</span>
+
+<span class="n">ref_init</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/initial_reference.csv&quot;</span><span class="p">)</span>
+<span class="n">ref_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/final_reference.csv&quot;</span><span class="p">)</span>
+<span class="n">dm2</span> <span class="o">=</span> <span class="n">FMMatcher</span><span class="p">(</span><span class="n">ro</span><span class="p">,</span> <span class="n">ref_init</span><span class="p">,</span> <span class="n">ref_final</span><span class="p">)</span>
+<span class="n">dm2</span><span class="o">.</span><span class="n">load_saved_parameters</span><span class="p">(</span><span class="s2">&quot;saved_parameters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="alternatively-set-the-search-parameters-manually-only-one-set-of-reference-fiducial-markers-is-necessary-if-you-do-this">
+<h2>Alternatively, set the search parameters manually. Only one set of reference fiducial markers is necessary if you do this.<a class="headerlink" href="#alternatively-set-the-search-parameters-manually-only-one-set-of-reference-fiducial-markers-is-necessary-if-you-do-this" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ref_init</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../example_data/initial_reference.csv&quot;</span><span class="p">)</span>
+<span class="n">dm3</span> <span class="o">=</span> <span class="n">FMMatcher</span><span class="p">(</span><span class="n">ro</span><span class="p">,</span> <span class="n">ref_init</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Finding Reference Edges
+</pre></div>
+</div>
+<p>These parameters must be set manually if you do not run the auto_set_params method</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm3</span><span class="o">.</span><span class="n">set_xy_search_error</span><span class="p">(</span><span class="mf">0.39</span><span class="p">)</span> <span class="c1"># The lateral position vectors between pairs of fiducial markers in the reference</span>
+                               <span class="c1"># and readout images are allowed to differy by 0.39 distance units</span>
+    
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_z_search_error</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># the z position vectors between pairs of fiducial markers in the reference</span>
+                               <span class="c1"># and readout images are allowed to differ by 0 distance units (the example data is 2D)</span>
+    
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_min_bright_prop</span><span class="p">(</span><span class="mf">0.18</span><span class="p">)</span> <span class="c1"># the intensity of readout dots matched to reference dots must be at least 0.18 times </span>
+                               <span class="c1"># the reference intensity</span>
+    
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_max_bright_prop</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span> <span class="c1"># the intensity of readout dots matched to reference dots must be no more than 3.7</span>
+                              <span class="c1"># times the reference intensity</span>
+</pre></div>
+</div>
+<p>These parameters have a default value, and to not require, but allow user tuning. Default values are set here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm3</span><span class="o">.</span><span class="n">set_min_edge_match</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># readout dots must be matched in at least 5 fiducial marker pairs to be considered well match</span>
+
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_n_longest_edges</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">ref_init</span><span class="o">.</span><span class="n">x</span><span class="p">))</span> <span class="c1"># index this many of the farthest apart pairs of fiducial markers in the </span>
+                                             <span class="c1"># reference imageto search for initial matches in each hybs</span>
+    
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_n_unmatch_give_up</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># If after finding an inital fatching pair, the first 100 other reference fiducial markers</span>
+                                <span class="c1">#searched for are not found, consider the initial match a false match</span>
+    
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_min_dot_matches</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># fiducial marker pattern matches finding fewer than 10 dots in the readout are failures.</span>
+
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_outlier_sd_thresh</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span> <span class="c1"># remove fiducial that drift a distance of z-score 3 or greater than the others</span>
+
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_min_fm_hyb_matches</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="nb">max</span><span class="p">(</span><span class="n">ro</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">ro</span><span class="o">.</span><span class="n">index</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># fiducial markers should be found at in at least</span>
+                                                                            <span class="c1"># half of the hybridizations</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Finding Reference Edges
+</pre></div>
+</div>
+<p>These parameters are optional and ommited by default, but can help speed up the computation if provided</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm3</span><span class="o">.</span><span class="n">set_max_lat_offset</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span> <span class="c1"># only match dots in readout images that have drifted less than 500 lateral distance units </span>
+                             <span class="c1"># from their location in the reference image</span>
+<span class="n">dm3</span><span class="o">.</span><span class="n">set_max_z_offset</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># only match dots in readout stacks that have drifted less than 10 z distance units </span>
+                          <span class="c1"># from their location in the reference stack.</span>
+</pre></div>
+</div>
+</section>
+<section id="run-the-alignment">
+<h2>Run the Alignment<a class="headerlink" href="#run-the-alignment" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">align</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="view-the-results">
+<h3>View the results<a class="headerlink" href="#view-the-results" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">offsets</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hyb</th>
+      <th>x</th>
+      <th>y</th>
+      <th>z</th>
+      <th>x_SE</th>
+      <th>y_SE</th>
+      <th>z_SE</th>
+      <th>n_matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>0.953194</td>
+      <td>-0.781336</td>
+      <td>0.0</td>
+      <td>0.007805</td>
+      <td>0.005930</td>
+      <td>0.0</td>
+      <td>88</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1.417761</td>
+      <td>-0.500650</td>
+      <td>0.0</td>
+      <td>0.008526</td>
+      <td>0.008233</td>
+      <td>0.0</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1.706141</td>
+      <td>-0.292566</td>
+      <td>0.0</td>
+      <td>0.005957</td>
+      <td>0.005933</td>
+      <td>0.0</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1.011257</td>
+      <td>-0.176718</td>
+      <td>0.0</td>
+      <td>0.007645</td>
+      <td>0.008230</td>
+      <td>0.0</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>0.830480</td>
+      <td>-0.149615</td>
+      <td>0.0</td>
+      <td>0.007187</td>
+      <td>0.007166</td>
+      <td>0.0</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>76</td>
+      <td>2.373315</td>
+      <td>-2.655393</td>
+      <td>0.0</td>
+      <td>0.014264</td>
+      <td>0.018030</td>
+      <td>0.0</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>77</td>
+      <td>2.213059</td>
+      <td>-2.804471</td>
+      <td>0.0</td>
+      <td>0.010665</td>
+      <td>0.014049</td>
+      <td>0.0</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>78</td>
+      <td>1.878191</td>
+      <td>-2.918742</td>
+      <td>0.0</td>
+      <td>0.010371</td>
+      <td>0.018617</td>
+      <td>0.0</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>79</td>
+      <td>1.208916</td>
+      <td>-2.967791</td>
+      <td>0.0</td>
+      <td>0.014505</td>
+      <td>0.019095</td>
+      <td>0.0</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>80</td>
+      <td>1.080502</td>
+      <td>-2.926247</td>
+      <td>0.0</td>
+      <td>0.011422</td>
+      <td>0.019532</td>
+      <td>0.0</td>
+      <td>72</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 8 columns</p>
+</div>
+</section>
+<section id="view-error-estimates">
+<h3>View error estimates<a class="headerlink" href="#view-error-estimates" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">loocv_alignment_errors</span>
+</pre></div>
+</div>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</pre></div>
+</div>
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ref_x</th>
+      <th>ref_y</th>
+      <th>ref_z</th>
+      <th>ref_int</th>
+      <th>hyb</th>
+      <th>loocv_align_x</th>
+      <th>loocv_align_y</th>
+      <th>loocv_align_z</th>
+      <th>comp_int</th>
+      <th>x_diff</th>
+      <th>y_diff</th>
+      <th>z_diff</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0.0</td>
+      <td>6868.670956</td>
+      <td>0</td>
+      <td>114.805972</td>
+      <td>544.889225</td>
+      <td>0.0</td>
+      <td>8089.031985</td>
+      <td>0.051689</td>
+      <td>0.005030</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0.0</td>
+      <td>6868.670956</td>
+      <td>1</td>
+      <td>114.741675</td>
+      <td>544.813096</td>
+      <td>0.0</td>
+      <td>5899.712727</td>
+      <td>-0.012608</td>
+      <td>-0.071099</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0.0</td>
+      <td>6868.670956</td>
+      <td>2</td>
+      <td>114.767609</td>
+      <td>544.805502</td>
+      <td>0.0</td>
+      <td>5570.644691</td>
+      <td>0.013326</td>
+      <td>-0.078693</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0.0</td>
+      <td>6868.670956</td>
+      <td>3</td>
+      <td>114.743385</td>
+      <td>544.885821</td>
+      <td>0.0</td>
+      <td>6709.645106</td>
+      <td>-0.010898</td>
+      <td>0.001626</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>114.754283</td>
+      <td>544.884195</td>
+      <td>0.0</td>
+      <td>6868.670956</td>
+      <td>4</td>
+      <td>114.764577</td>
+      <td>544.866750</td>
+      <td>0.0</td>
+      <td>7184.663680</td>
+      <td>0.010294</td>
+      <td>-0.017444</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>1942.005954</td>
+      <td>1138.569406</td>
+      <td>0.0</td>
+      <td>9798.582014</td>
+      <td>74</td>
+      <td>1941.975062</td>
+      <td>1138.248613</td>
+      <td>0.0</td>
+      <td>5674.030592</td>
+      <td>-0.030892</td>
+      <td>-0.320793</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>1942.005954</td>
+      <td>1138.569406</td>
+      <td>0.0</td>
+      <td>9798.582014</td>
+      <td>75</td>
+      <td>1942.284749</td>
+      <td>1138.282820</td>
+      <td>0.0</td>
+      <td>6689.730733</td>
+      <td>0.278795</td>
+      <td>-0.286586</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>1942.005954</td>
+      <td>1138.569406</td>
+      <td>0.0</td>
+      <td>9798.582014</td>
+      <td>76</td>
+      <td>1941.999969</td>
+      <td>1138.195781</td>
+      <td>0.0</td>
+      <td>7518.567025</td>
+      <td>-0.005985</td>
+      <td>-0.373625</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>1942.005954</td>
+      <td>1138.569406</td>
+      <td>0.0</td>
+      <td>9798.582014</td>
+      <td>78</td>
+      <td>1941.901542</td>
+      <td>1138.106969</td>
+      <td>0.0</td>
+      <td>6692.708334</td>
+      <td>-0.104412</td>
+      <td>-0.462437</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>1942.005954</td>
+      <td>1138.569406</td>
+      <td>0.0</td>
+      <td>9798.582014</td>
+      <td>80</td>
+      <td>1942.035848</td>
+      <td>1138.242551</td>
+      <td>0.0</td>
+      <td>6919.025107</td>
+      <td>0.029894</td>
+      <td>-0.326855</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5866 rows × 12 columns</p>
+</div>
+</section>
+<section id="plot-mean-square-leave-one-out-cross-validation-error-estimates">
+<h3>Plot Mean Square Leave-One-Out Cross Validation Error Estimates<a class="headerlink" href="#plot-mean-square-leave-one-out-cross-validation-error-estimates" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">loocv_alignment_errors</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;latdiffsq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">loocv_alignment_errors</span><span class="o">.</span><span class="n">x_diff</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dm</span><span class="o">.</span><span class="n">loocv_alignment_errors</span><span class="o">.</span><span class="n">y_diff</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">mean_square_errors</span> <span class="o">=</span> <span class="n">dm</span><span class="o">.</span><span class="n">loocv_alignment_errors</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;hyb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;latdiffsq&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_square_errors</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hybridization&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Root Mean Square Leave-One-Out Cross Validation Error (Pixels)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Root Mean Square Leave-One-Out Cross Validation Error (Pixels)&#39;)
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_32_1.png" /></p>
+</section>
+<section id="save-the-results">
+<h3>Save the results<a class="headerlink" href="#save-the-results" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">save_offsets</span><span class="p">(</span><span class="s2">&quot;offsets_all.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="it-is-useful-to-save-leave-one-out-cross-validation-error-estimates-for-the-alignment-shifts-and-records-of-which-readout-dots-matched-to-which-reference-dots">
+<h3>It is useful to save leave-one-out cross validation error estimates for the alignment shifts and records of which readout dots matched to which reference dots.<a class="headerlink" href="#it-is-useful-to-save-leave-one-out-cross-validation-error-estimates-for-the-alignment-shifts-and-records-of-which-readout-dots-matched-to-which-reference-dots" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm</span><span class="o">.</span><span class="n">save_loocv_errors</span><span class="p">(</span><span class="s2">&quot;loov_errors_all.csv&quot;</span><span class="p">)</span>
+
+<span class="n">dm</span><span class="o">.</span><span class="n">save_matches</span><span class="p">(</span><span class="s2">&quot;matches_all.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jonathan A. White.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

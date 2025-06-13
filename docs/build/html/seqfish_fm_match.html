@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>seqfish_fm_match package &mdash; seqfish_fm_match 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=d45e8c67"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            seqfish_fm_match
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">seqfish_fm_match</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">seqfish_fm_match package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/seqfish_fm_match.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="seqfish-fm-match-package">
+<h1>seqfish_fm_match package<a class="headerlink" href="#seqfish-fm-match-package" title="Link to this heading"></a></h1>
+<dl class="py class" id="module-seqfish_fm_match">
+<dt class="sig sig-object py" id="seqfish_fm_match.CrossChannelFMMatcher">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seqfish_fm_match.</span></span><span class="sig-name descname"><span class="pre">CrossChannelFMMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.CrossChannelFMMatcher" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.CrossChannelFMMatcher.align_channels">
+<span class="sig-name descname"><span class="pre">align_channels</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.CrossChannelFMMatcher.align_channels" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.CrossChannelFMMatcher.align_refs">
+<span class="sig-name descname"><span class="pre">align_refs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.CrossChannelFMMatcher.align_refs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.CrossChannelFMMatcher.auto_set_params">
+<span class="sig-name descname"><span class="pre">auto_set_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.CrossChannelFMMatcher.auto_set_params" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">seqfish_fm_match.</span></span><span class="sig-name descname"><span class="pre">FMMatcher</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps_z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This Class aligns dots in a seqFISH experiment image containing fiducial markers, to a reference image containing
+only the fiducial markers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ro</strong> – pandas dataframe of reodout points with columns = (“x”, “y”, “z”, “int”) and index “hyb” denoting the
+hybridiztion in which the point was found.</p></li>
+<li><p><strong>ref</strong> – pandas dataframe of reference points with columns = (“x”, “y”, “z”, “int”)</p></li>
+<li><p><strong>ref_final</strong> – Optional- pandas dataframe of final reference points measured after readout hybridizations. Used
+for automatically setting parameters in the auto_set_parameters method.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return FMMatcher<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.align">
+<span class="sig-name descname"><span class="pre">align</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hybs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.align" title="Link to this definition"></a></dt>
+<dd><p>aligns hybridizations in the readout points to the reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hybs</strong> – list of hybridizations to align. If None, aligns all hybridizations.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.align_hyb">
+<span class="sig-name descname"><span class="pre">align_hyb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hyb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_hyb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.align_hyb" title="Link to this definition"></a></dt>
+<dd><p>Finds the alignment of a readout hybridization to the reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hyb</strong> – integer number of the hybridization to align (if not supplying the to_align dataframe)</p></li>
+<li><p><strong>ref</strong> – Optional- pandas DataFrame of the reference dots. If not given, uses self.ref</p></li>
+<li><p><strong>to_align</strong> – Optional - pandas DataFrame of readout dots to align. if not given, aligns the hyb number given.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list: [x_mean_offset, y_mean_offset, z_mean_offset, x_mean_offset_se, y_mean_offset_se, z_mean_offset_se, &lt;number of dots used to calculate offsets&gt;]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.auto_set_params">
+<span class="sig-name descname"><span class="pre">auto_set_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.auto_set_params" title="Link to this definition"></a></dt>
+<dd><p>Matches the initial reference dots to the final reference dots by trying a range of possible search parameters.
+Uses summary statistics of the alignment errors and differences in brightness to set search parameters to help
+in the search for the fiducial markers in the readout hybridizations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple(opt_matches :: pd.DataFrame, mm_lt, mm_zt, x_offset, y_offset, z_offset, lat_offset)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.load_saved_parameters">
+<span class="sig-name descname"><span class="pre">load_saved_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.load_saved_parameters" title="Link to this definition"></a></dt>
+<dd><p>Load previously found and saved parameters to the FMMatcher object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>params_file_name</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.remove_double_reference_markers">
+<span class="sig-name descname"><span class="pre">remove_double_reference_markers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xy_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.remove_double_reference_markers" title="Link to this definition"></a></dt>
+<dd><p>Removes fiducial markers from the reference list that are within given lateral and z radii of each other.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ref</strong> – dataframe of fiducial markers in the reference image</p></li>
+<li><p><strong>xy_r</strong> – minimum allowed lateral separation of fiducial markers</p></li>
+<li><p><strong>z_r</strong> – minimum allowed z separation of fiducial markers</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.save_loocv_errors">
+<span class="sig-name descname"><span class="pre">save_loocv_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.save_loocv_errors" title="Link to this definition"></a></dt>
+<dd><p>Saves leave-one-out cross validation error estimates to a csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Name of the file to which to save error estimates.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.save_matches">
+<span class="sig-name descname"><span class="pre">save_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.save_matches" title="Link to this definition"></a></dt>
+<dd><p>Save csv file of fiducial marker matches between the reference and each readout hybridization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>save_name</strong> – Name of the file to which to save matches.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.save_offsets">
+<span class="sig-name descname"><span class="pre">save_offsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.save_offsets" title="Link to this definition"></a></dt>
+<dd><p>Saves alignment offsets found to csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – name of the csv file to which to save.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.save_pairwise_tforms">
+<span class="sig-name descname"><span class="pre">save_pairwise_tforms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.save_pairwise_tforms" title="Link to this definition"></a></dt>
+<dd><p>Saves a for dimensional array of affine transforms between hybridizations to a npy file.
+The first two dimensions are for each of the pairwise hybridizations. The Matrix returned
+in the index [i, j, :, :] gives the output of the [estimateAffine3D](<a class="reference external" href="https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga396afb6411b30770e56ab69548724715">https://docs.opencv.org/3.4/d9/d0c/group__calib3d.html#ga396afb6411b30770e56ab69548724715</a>)
+function of OpenCV when estimating an affine transformation between hybridization i and hybridization j.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – name of the csv file to which to save.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.save_params">
+<span class="sig-name descname"><span class="pre">save_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.save_params" title="Link to this definition"></a></dt>
+<dd><p>Saves the parameters from the FMMatcher object to a csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>save_name</strong> – The file name which to save the parameters to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_max_bright_prop">
+<span class="sig-name descname"><span class="pre">set_max_bright_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mbp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_max_bright_prop" title="Link to this definition"></a></dt>
+<dd><p>Sets tne maximum proportion of brightness between fiducial markers in the readout hybridiztions to the reference image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mbp</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_max_lat_offset">
+<span class="sig-name descname"><span class="pre">set_max_lat_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mlo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_max_lat_offset" title="Link to this definition"></a></dt>
+<dd><p>Sets an upper bound on the lateral drift from the reference image to each readout hybridization to help narrow
+the search for initial pairs of fiducial markers (optional).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mlo</strong> – the maximum allowed lateral (xy) offset from reference</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_max_z_offset">
+<span class="sig-name descname"><span class="pre">set_max_z_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mzo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_max_z_offset" title="Link to this definition"></a></dt>
+<dd><p>Sets an upper bound on the z drift from the reference image to each readout hybridization to help narrow
+the search for initial pairs of fiducial markers (optional).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mzo</strong> – the maximum allowed z offset from reference</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_min_bright_prop">
+<span class="sig-name descname"><span class="pre">set_min_bright_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mbp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_min_bright_prop" title="Link to this definition"></a></dt>
+<dd><p>The set the minimum proportion of brightness between fiducial markers in the readout hybridations to in the reference
+image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mbp</strong> – the minimum proportion of brightness between fiducial markers in the readout hybridations to in the reference</p>
+</dd>
+</dl>
+<p>image.
+:return: None</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_min_dot_matches">
+<span class="sig-name descname"><span class="pre">set_min_dot_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mdm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_min_dot_matches" title="Link to this definition"></a></dt>
+<dd><p>At least this many dots must be matched to consider a fiducial marker pattern in a readout image matched to the reference
+pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mdm</strong> – The minimum number of matched dots in a matched hybridization image fiducial marker pattern</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_min_edge_match">
+<span class="sig-name descname"><span class="pre">set_min_edge_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_edge_matches</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_min_edge_match" title="Link to this definition"></a></dt>
+<dd><p>Set the minimum number of pairs of fiducial markers that must be matched to consider the fiducial markers
+pattern matched.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>min_edge_matches</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_min_fm_hyb_matches">
+<span class="sig-name descname"><span class="pre">set_min_fm_hyb_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mfhm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_min_fm_hyb_matches" title="Link to this definition"></a></dt>
+<dd><p>Fiducial markers that were matched in fewer hybridizations than this will be discarded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mfhm</strong> – the minimum fidicuial marker hyb marches</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_n_longest_edges">
+<span class="sig-name descname"><span class="pre">set_n_longest_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_n_longest_edges" title="Link to this definition"></a></dt>
+<dd><p>Sets the number of longest edges to search through to find initial pair of fiducial markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nle</strong> – The number of pairs of longest edges to search through to find initial pair of fiducial markers.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_n_unmatch_give_up">
+<span class="sig-name descname"><span class="pre">set_n_unmatch_give_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nugu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_n_unmatch_give_up" title="Link to this definition"></a></dt>
+<dd><p>If after finding an initial pair of fiducial markers, the algorithm searches for this many other fiducial markers
+without finding any, assume that the initial match was in error, and proceed to search for a new initial match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nugu</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_outlier_sd_thresh">
+<span class="sig-name descname"><span class="pre">set_outlier_sd_thresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_outlier_sd_thresh" title="Link to this definition"></a></dt>
+<dd><p>Matched fiducial markers that have drifted more than this many standard deviations difference that the mean distance
+that all matched have drifted will be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ost</strong> – the z-score threshold for outliers</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_xy_search_error">
+<span class="sig-name descname"><span class="pre">set_xy_search_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_xy_search_error" title="Link to this definition"></a></dt>
+<dd><p>Sets the allowed lateral error when matching pairs of fiducial markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>xyse</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="seqfish_fm_match.FMMatcher.set_z_search_error">
+<span class="sig-name descname"><span class="pre">set_z_search_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zse</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#seqfish_fm_match.FMMatcher.set_z_search_error" title="Link to this definition"></a></dt>
+<dd><p>Sets the allowed z error when matching pairs of fiducial markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>zse</strong></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Jonathan A. White.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
