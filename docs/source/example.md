@@ -1,6 +1,7 @@
 # Example
 
-Note: this page was generated from a jupyter notebook and sample data both of which are freely available in the [seqfish_fm_match github repository](https://github.com/CaiGroup/seqfish_fm_match).
+Note: this page was generated from a jupyter notebook and sample data both of which are freely available in the [seqfish_fm_match github repository](https://github.com/CaiGroup/seqfish_fm_match). A version of this notebook is also freely available on [Google Colab](https://colab.research.google.com/github/CaiGroup/seqfish_fm_match/blob/main/example_notebook/example_alignment_colab_py.ipynb).
+
 
 ```python
 import pandas as pd
