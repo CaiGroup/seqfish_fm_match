@@ -8,4 +8,4 @@ Align SeqFISH Hybridizations by fiducial marker matching
 
 ## Example
 
-Checkout the [Google Colab](https://colab.research.google.com/github/CaiGroup/seqfish_fm_match/blob/main/example_notebook/example_alignment_colab_py.ipynb) notebook
+Checkout the [Google Colab](https://colab.research.google.com/github/CaiGroup/seqfish_fm_match/blob/main/example_notebook/example_alignment_colab_py.ipynb) example notebook or the [local](https://github.com/CaiGroup/seqfish_fm_match/blob/main/example_notebook/example_alignment.py.ipynb) version.
