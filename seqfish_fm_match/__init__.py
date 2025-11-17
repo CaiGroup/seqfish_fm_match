@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import cv2
-from scipy.spatial import cKDTree as KDTree
+from scipy.spatial import KDTree #cKDTree as KDTree
 from copy import copy, deepcopy
 import warnings
 warnings.filterwarnings('ignore')
