@@ -8,5 +8,5 @@ setup(name='seqfish_fm_match',
       author_email='jawhite@caltech.edu',
       license='MIT',
       packages=['seqfish_fm_match'],
-      install_requires=['pandas==2.2.3', 'numpy==2.1.2', 'scipy==1.14.1', 'opencv-python==4.10.0.84'],
+      install_requires=['pandas >= 2.2.0', 'numpy>=2.1', 'scipy>=1.14', 'opencv-python>=4.10'],#['pandas==2.2.3', 'numpy==2.1.2', 'scipy==1.14.1', 'opencv-python==4.10.0.84'],
       zip_safe=False)
