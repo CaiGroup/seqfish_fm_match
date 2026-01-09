@@ -2,8 +2,13 @@
 Align SeqFISH Hybridizations by fiducial marker matching
 
 ## Installation
+We recommend that you create a dedicated python environment using anaconda to run this package.
 
-`pip install git+https://github.com/CaiGroup/seqfish_fm_match.git#egg=seqfish_fm_match`
+```
+conda create -n fmmatch python=3.12
+conda activate fmmatch
+pip install git+https://github.com/CaiGroup/seqfish_fm_match.git#egg=seqfish_fm_match
+```
 
 ## Example
 
